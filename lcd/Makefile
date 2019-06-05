@@ -4,7 +4,9 @@ SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 DEPS = $(SRCS:.c=.d)
 
-BIN  = mp3
+#修改
+#BIN  = mp3
+BIN  = 
 
 all:$(DEPS) $(OBJS) $(BIN) 
 
