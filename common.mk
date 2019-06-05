@@ -22,7 +22,7 @@ endif
 $(BIN):$(OBJS)
 	@echo "SRCS = $(SRCS)"
 	@echo "OBJS = $(OBJS)"
-	gcc -o $@ $^
+	gcc -o $@ $^ ../usb/usb.o ../lcd/lcd.o ../media/media.o
 %.o:%.c
 	gcc -o $@ -c $(filter %.c,$^)
 
