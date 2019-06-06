@@ -1,7 +1,7 @@
 .PHONY:all clean distclean
 
 export BUILD_ROOT = $(shell pwd)
-
+export HEAD_PATH  = $(BUILD_ROOT)/include
 
 all:
 	make -C lcd
