@@ -1,5 +1,8 @@
 .PHONY:all clean distclean
 
+export BUILD_ROOT = $(shell pwd)
+
+
 all:
 	make -C lcd
 	make -C usb
@@ -16,9 +19,7 @@ clean:
 
 distclean:
 	rm -f  mp3
-	rm -fr app/link_obj/*.o app/player.d
-	rm -fr usb/usb.o usb/usb.d
-	rm -fr lcd/lcd.o lcd/lcd.d
-	rm -fr media/media.o media/media.d
+	rm -fr app/link_obj/*.o 
 	rm -rf app/link_obj
+	rm -rf app/dep
 

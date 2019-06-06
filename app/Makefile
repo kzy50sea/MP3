@@ -5,5 +5,9 @@ BIN=mp3
 
 #修改
 #include common.mk
-include ../common.mk
+#include ../common.mk
+include $(BUILD_ROOT)/common.mk
+
+
+
 
