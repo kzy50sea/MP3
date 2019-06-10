@@ -19,7 +19,7 @@ clean:
 
 distclean:
 	rm -f  mp3
-	rm -fr app/link_obj/*.o 
+	rm -fr app/lib_obj
 	rm -rf app/link_obj
 	rm -rf app/dep
-
+	rm -rf lib/
