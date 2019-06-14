@@ -1,4 +1,4 @@
-.PHONY:all clean distclean
+.PHONY:all clean distclean install uninstall
 
 export BUILD_ROOT = $(shell pwd)
 export HEAD_PATH  = $(BUILD_ROOT)/include
@@ -24,3 +24,14 @@ distclean:
 	rm -rf app/link_obj
 	rm -rf app/dep
 	rm -rf lib/
+
+install:
+	cp mp3 /usr/bin
+	cp lib/libmath.so /usr/lib
+	cp lib/ext_lib/librmvb.so /usr/lib
+
+uninstall:
+	rm -f /usr/bin/mp3
+	rm -f /usr/lib/libmath.so
+	rm -f /usr/lib/librmvb.so
+
