@@ -57,6 +57,7 @@ LINK_OBJ += $(OBJS)
 
 
 LIB_DEP  = $(wildcard $(LIB_DIR)/*.a) $(wildcard $(LIB_DIR)/*.so)
+LIB_DEP  += $(wildcard $(LIB_DIR)/ext_lib/*.a) $(wildcard $(LIB_DIR)/ext_lib/*.so)
 
 LINK_LIB_NAME = $(patsubst lib%,-l%,$(basename $(notdir $(LIB_DEP))))
 
@@ -80,7 +81,8 @@ endif
 $(BIN):$(LINK_OBJ) 
 	#echo "LINK_OBJ = $(LINK_OBJ)"
 	#gcc -o $@ $^ -L$(LIB_DIR) $(LINK_LIB_NAME)
-	gcc -o $@ $^ -L$(LIB_DIR) $(LINK_LIB_NAME)
+	#gcc -o $@ $^ -L$(LIB_DIR) $(LINK_LIB_NAME)
+	gcc -o $@ $^ -L$(LIB_DIR) -L$(LIB_DIR)/ext_lib $(LINK_LIB_NAME)
 
 $(LIB):$(OBJS)
 	ar rcs $@ $^

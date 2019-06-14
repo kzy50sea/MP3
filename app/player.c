@@ -3,6 +3,8 @@
 #include <usb.h>
 #include <media.h>
 #include <math.h>
+#include <jpg.h>
+#include <rmvb.h>
 
 int main()
 {
@@ -11,5 +13,7 @@ int main()
 	usb_init();
 	media_init();
 	math_dll_init();
+	jpg_init();
+	rmvb_init();
 	return 0;
 }
