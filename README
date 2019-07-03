@@ -4,11 +4,19 @@
 include/ 用来存放头文件的
 lib/ 用来存放该项目生成的静态库或者动态库以及第三方库的
 app目录是和最终生成目标文件，可执行程序相关的
+主目录下面的Makefile是用来指导模块之间的编译过程
+config.mk文件是用来配置工程以及外扩模块的
+common.mk是用来指导各模块的编译，它是被各模块的Makefile进行调用的
 
 
 
+注意:
 
+不要直接执行make distclean 它会把所有的库删除的，如果直接执行make distclean需要将tmp目录下面的.a .so 库手动复制到lib目录下面的ext_lib目录
 
-
+若生成的可执行程序报错：./mp3: error while loading shared libraries: libmath.so: cannot open shared object file: No such file or directory
+说明正常，原因是动态库路径没有设置正确，在命令行使用命令export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./lib::./lib/ext_lib/
+然后就可以执行了
+在完成时没有注意到这个问题：
 
 
