@@ -17,6 +17,6 @@ common.mk是用来指导各模块的编译，它是被各模块的Makefile进行
 若生成的可执行程序报错：./mp3: error while loading shared libraries: libmath.so: cannot open shared object file: No such file or directory
 说明正常，原因是动态库路径没有设置正确，在命令行使用命令export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./lib::./lib/ext_lib/
 然后就可以执行了
-在完成时没有注意到这个问题：
+在完成时没有注意到这个问题：需要研究学习的可以把这个功能完善一下
 
 
